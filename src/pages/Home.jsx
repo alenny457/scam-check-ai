@@ -94,16 +94,18 @@ export default function Home() {
     onChange={(e) => setText(e.target.value)}
   />
 )}
-            <div className="flex justify-between items-center mt-4">
-              <p className="text-xs text-gray-500">🔒 System anonymizes data processing queries</p>
-              <button
-                disabled={loading || !text.trim()}
-                onClick={handleAnalyze}
-                className="bg-blue-600 hover:bg-blue-700 disabled:opacity-40 text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition-all shadow-md shadow-blue-600/10"
-              >
-                {loading ? 'Analyzing Indicators...' : '🚀 Analyze Now'}
-              </button>
-            </div>
+           <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-4 mt-4">
+  <p className="text-xs text-gray-500 flex items-center gap-1">
+    🔒 System anonymizes data processing queries
+  </p>
+  <button
+    disabled={loading || !text.trim()}
+    onClick={handleAnalyze}
+    className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 disabled:opacity-40 text-white text-sm font-semibold px-6 py-3 rounded-lg shadow transition-all active:scale-95 whitespace-nowrap"
+  >
+    {loading ? 'Analyzing Indicators...' : '🚀 Analyze Now'}
+  </button>
+</div>
             {error && <p className="text-xs text-red-400 mt-2">{error}</p>}
           </div>
         </div>
