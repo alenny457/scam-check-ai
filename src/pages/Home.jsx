@@ -78,7 +78,8 @@ export default function Home() {
 >
   🌐 Check Website (v2)
 </button>
- <div className="w-full">
+ </div>
+<div className="w-full">
   {activeTab === 'message' ? (
     <textarea
       className="w-full h-44 bg-[#080D1A] text-gray-200 placeholder-gray-600 rounded-lg p-4 focus:outline-none focus:border-blue-500 text-base"
@@ -95,7 +96,7 @@ export default function Home() {
       onChange={(e) => setText(e.target.value)}
     />
   )}
-</div>
+  
            <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-4 mt-4">
   <p className="text-xs text-gray-500 flex items-center gap-1">
     🔒 System anonymizes data processing queries
