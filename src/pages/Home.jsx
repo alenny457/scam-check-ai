@@ -59,7 +59,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="flex border-b border-slate-800 pb-3 mb-4 gap-6 text-sm text-gray-400">
+            <div className="flex w-full items-center border-b border-slate-800 pb-3 mb-4 gap-6 text-sm text-gray-400">
   <button
   type="button"
   onClick={() => setActiveTab('message')}
@@ -78,22 +78,24 @@ export default function Home() {
 >
   🌐 Check Website (v2)
 </button>
+ <div className="w-full">
   {activeTab === 'message' ? (
-  <textarea
-    className="w-full h-44 bg-[#080D1A] text-gray-200 placeholder-gray-600 rounded-lg p-4 focus:outline-none focus:border-blue-500 border border-slate-800/50 resize-none text-sm"
-    placeholder="Paste suspicious message, email, or SMS here...&#10;Example: 'Congratulations! You have won $5000. Click here to claim your prize.'"
-    value={text}
-    onChange={(e) => setText(e.target.value)}
-  />
-) : (
-  <input
-    type="text"
-    className="w-full bg-[#080D1A] text-gray-200 placeholder-gray-600 rounded-lg p-4 border border-slate-800 focus:outline-none focus:border-blue-500 text-sm"
-    placeholder="Enter suspicious website URL here (e.g., https://secure-login-update.com)..."
-    value={text}
-    onChange={(e) => setText(e.target.value)}
-  />
-)}
+    <textarea
+      className="w-full h-44 bg-[#080D1A] text-gray-200 placeholder-gray-600 rounded-lg p-4 focus:outline-none focus:border-blue-500 text-base"
+      placeholder="Paste suspicious message, email, or SMS here..."
+      value={text}
+      onChange={(e) => setText(e.target.value)}
+    />
+  ) : (
+    <input
+      type="text"
+      className="w-full bg-[#080D1A] text-gray-200 placeholder-gray-600 rounded-lg p-4 border border-slate-800 focus:outline-none focus:border-blue-500 text-base"
+      placeholder="Enter suspicious website URL here..."
+      value={text}
+      onChange={(e) => setText(e.target.value)}
+    />
+  )}
+</div>
            <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-4 mt-4">
   <p className="text-xs text-gray-500 flex items-center gap-1">
     🔒 System anonymizes data processing queries
